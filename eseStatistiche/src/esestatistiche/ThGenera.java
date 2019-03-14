@@ -9,7 +9,20 @@ package esestatistiche;
  *
  * @author ghislanzoni_mirko
  */
-public class ThGenera {
-    private int numChar;
-    private DatiCondivisi d;
+public class ThGenera extends Thread {
+    DatiCondivisi ptrDatiC;
+    
+    public ThGenera(DatiCondivisi d){
+        this.ptrDatiC = d;
+    }
+    
+    @Override
+    public void run(){
+        int num = ptrDatiC.getNumChar();
+        for (int i=0; i<num; i++);{
+        char car='a';
+        ptrDatiC.setBuffer(car);
+    }
+        System.out.println("Fine genera");
+    }
 }

@@ -9,6 +9,15 @@ package esestatistiche;
  *
  * @author ghislanzoni_mirko
  */
-public class ThVisualizza {
-   private DatiCondivisi d; 
+public class ThVisualizza extends Thread{
+    DatiCondivisi ptrDatiC;
+    
+    public ThVisualizza(DatiCondivisi d){
+        this.ptrDatiC = d;
+    }
+        
+    @Override
+    public void run(){
+        System.out.println("Fine visualizza");
+    }
 }

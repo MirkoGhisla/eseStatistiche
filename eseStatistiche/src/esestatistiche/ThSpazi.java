@@ -9,6 +9,15 @@ package esestatistiche;
  *
  * @author ghislanzoni_mirko
  */
-public class ThSpazi {
-    private DatiCondivisi d;
+public class ThSpazi extends Thread{
+        DatiCondivisi ptrDatiC;
+    
+    public ThSpazi(DatiCondivisi d){
+        this.ptrDatiC = d;
+    }
+    
+    @Override
+    public void run(){
+        System.out.println("Fine conta spazi");
+    }
 }

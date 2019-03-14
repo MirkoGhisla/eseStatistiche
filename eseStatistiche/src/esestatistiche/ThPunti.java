@@ -9,6 +9,24 @@ package esestatistiche;
  *
  * @author ghislanzoni_mirko
  */
-public class ThPunti {
-    private DatiCondivisi d;
+public class ThPunti extends Thread {
+
+    DatiCondivisi ptrDatiC;
+    boolean fine;
+
+    public ThPunti(DatiCondivisi d) {
+        this.ptrDatiC = d;
+        fine = false;
+    }
+
+    @Override
+    public void run() {
+        while (!fine) {
+            char car = ptrDatiC.getBuffer();
+            if (car == '.') {
+                ptrDatiC.incrementaPuntiLetti();
+            }
+        }
+        System.out.println("Fine conta punti");
+    }
 }
